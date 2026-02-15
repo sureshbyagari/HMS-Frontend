@@ -1,0 +1,48 @@
+
+
+  <!-- LIGHT HEADER -->
+  <nav class="navbar bg-light border rounded mb-4 px-3">
+    <div>
+      <span class="navbar-brand mb-0 fw-semibold text-primary">
+        ARI ABHINAV HOSPITALS
+      </span>
+      <div class="small text-muted">
+        Hospital Management System
+      </div>
+    </div>
+<!-- 
+    <div class="ms-auto">
+      <a class="badge bg-secondary-subtle text-secondary" routerLink="/admindash">
+        Admin 
+      </a>
+      <a class="badge bg-secondary-subtle text-secondary" routerLink="/admindash" >
+        Dashboard
+      </a>
+    </div> -->
+  </nav>
+
+<div class="container mt-4">
+    <h2>Book an Appointment</h2>
+   <form (ngSubmit)="onsubmit()">
+    <div class="form-group">
+        <label >name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="enter your name" [(ngModel)]="appointment.name">
+    </div>
+       <div class="form-group">
+        <label >Age</label>
+        <input type="text" class="form-control" id="age" name="age" placeholder="enter your age" [(ngModel)]="appointment.age">
+    </div>
+       <div class="form-group">
+        <label >symptoms</label>
+        <input type="text" class="form-control" id="symptoms" name="symptoms" placeholder="enter your symptoms" [(ngModel)]="appointment.symptoms">
+    </div>
+       <div class="form-group">
+        <label >Contact</label>
+        <input type="text" class="form-control" id="number" name="number" placeholder="enter your contact number" [(ngModel)]="appointment.number">
+    </div>
+    <div class="button-row">
+        <button type="submit" class="btn btn-success">Book Appointment</button>
+    </div>
+   </form>
+
+</div>

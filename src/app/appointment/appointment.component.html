@@ -1,0 +1,94 @@
+<div class="container mt-4">
+
+  <!-- LIGHT HEADER -->
+  <nav class="navbar bg-light border rounded mb-4 px-3">
+    <div>
+      <span class="navbar-brand mb-0 fw-semibold text-primary">
+        ARI ABHINAV HOSPITALS
+      </span>
+      <div class="small text-muted">
+        Hospital Management System
+      </div>
+    </div>
+
+    <div class="ms-auto">
+      <a class="badge bg-secondary-subtle text-secondary" routerLink="/admindash">
+        Admin 
+      </a>
+      <a class="badge bg-secondary-subtle text-secondary" routerLink="/admindash" >
+        Dashboard
+      </a>
+    </div>
+  </nav>
+
+  <!-- TITLE -->
+  <h5 class="mb-3 fw-semibold text-dark">
+    Current Appointments Queue
+  </h5>
+
+  <!-- TABLE -->
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover align-middle">
+      <thead class="table-light">
+        <tr>
+          <th>ID</th>
+          <th>Patient Name</th>
+          <th class="text-center">Age</th>
+          <th>Contact Number</th>
+          <th>Symptoms</th>
+          <th>Status</th>
+          <th class="action-column">Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let appointment of appointment">
+          <td>{{ appointment.id }}</td>
+          <td class="fw-semibold text-primary">
+            {{ appointment.name }}
+          </td>
+          <td class="text-center">{{ appointment.age }}</td>
+          <td>{{ appointment.number }}</td>
+          <td class="text-muted">
+            {{ appointment.symptoms }}
+          </td>
+          <td>
+            <span class="badge bg-success-subtle text-success">
+              Scheduled
+            </span>
+          </td>
+
+
+               <td>
+            <!-- <button
+              (click)="updateAppointment(appointment.id)"
+              class="btn btn-success btn-sm me-2">
+              Update
+            </button> -->
+
+            <button
+              (click)="deleteAppointment(appointment.id)"
+              class="btn btn-danger btn-sm">
+              Delete
+            </button>
+          </td>
+
+
+
+
+
+
+
+
+        </tr>
+
+        <tr *ngIf="appointment.length === 0">
+          <td colspan="6" class="text-center text-muted py-3">
+            No appointments in queue
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

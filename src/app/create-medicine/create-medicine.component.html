@@ -1,0 +1,35 @@
+
+
+  <!-- LIGHT HEADER -->
+  <nav class="navbar bg-light border rounded mb-4 px-3">
+    <div>
+      <span class="navbar-brand mb-0 fw-semibold text-primary">
+        ARI ABHINAV HOSPITALS
+      </span>
+      <div class="small text-muted">
+        Hospital Management System
+      </div>
+    </div>
+<!-- 
+    <div class="ms-auto">
+      <a class="badge bg-secondary-subtle text-secondary" routerLink="/admindash">
+        Admin 
+      </a>
+      <a class="badge bg-secondary-subtle text-secondary" routerLink="/admindash" >
+        Dashboard
+      </a>
+    </div> -->
+  </nav>
+  <div class="container mt-4">
+<form  (ngSubmit)="onsubmit()">
+    <div class="form-group">
+        <label>Medicine Name:</label>
+        <input type="text" [(ngModel)]="medicines.drugName" class="form-control" id="drugaName" name="drugName" placeholder="enter the drugName">
+    </div>
+    <div class="form-group">
+        <label>Stock:</label>
+        <input type="text" [(ngModel)]="medicines.stock" class="form-control" id="stock" name="stock" placeholder="enter the stock">
+    </div>
+    <button type="submit" class="btn btn-success">Add Medicine</button>
+</form>
+</div>

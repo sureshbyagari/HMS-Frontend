@@ -1,0 +1,278 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-3 shadow-sm">
+
+  <!-- Brand -->
+  <a class="navbar-brand fw-bold text-white" routerLink="/home">
+    SRI ABHINAV HOSPITALS
+  </a>
+
+  <!-- Right Side -->
+  <div class="ms-auto d-flex align-items-center gap-3">
+
+    <!-- If NOT logged in -->
+    <ng-container *ngIf="!isLoggedIn">
+      <button class="btn btn-outline-light px-4" routerLink="/doclogin">
+        Doctor Login
+      </button>
+
+      <!-- ✅ FIXED ROUTE -->
+      <button class="btn btn-outline-light px-4" routerLink="/admlog">
+        Admin Login
+      </button>
+    </ng-container>
+
+    <!-- If logged in -->
+    <ng-container *ngIf="isLoggedIn">
+
+      <!-- Profile -->
+      <div class="profile-box text-white" (click)="goToDashboard()">
+        <img src="assets/profile.png" class="profile-img" alt="profile">
+        <div class="d-flex flex-column">
+          <span class="fw-semibold">{{ username }}</span>
+          <small class="text-light opacity-75">{{ role }}</small>
+        </div>
+      </div>
+
+      <!-- Logout -->
+      <button class="btn btn-outline-danger px-4" (click)="logout()">
+        Logout
+      </button>
+
+    </ng-container>
+
+  </div>
+
+</nav>
+
+
+<!-- HERO SECTION -->
+<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+  </div>
+
+  <div class="carousel-inner">
+  <div class="carousel-item active">
+    <div class="overlay-image" style="background-image: url('assets/hospital.png');"></div>
+  </div>
+
+  <div class="carousel-item">
+    <div class="overlay-image" style="background-image: url('assets/a1.jpg');"></div>
+  </div>
+    <div class="carousel-item" style="min-height: 550px;">
+      <div class="overlay-image" style="background-image: url('assets/Ambulence.jpg');"></div>
+    </div>
+  </div>
+
+  <div class="carousel-caption-centered position-absolute top-50 start-50 translate-middle text-center text-white z-3 w-100">
+    <div class="container">
+      <h1 class="fw-bold display-3 mb-4">Welcome To Sri Abhinav Hospitals</h1>
+      <div class="mb-4">
+        <button class="btn btn-warning px-5 py-2 fw-bold shadow" routerLink="/createappointment">
+          Book Appointment
+        </button>
+      </div>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <span class="badge bg-danger fs-5 px-4 py-3 rounded-pill shadow-sm">10000+ Healing Hands</span>
+        <span class="badge bg-primary fs-5 px-4 py-3 rounded-pill shadow-sm">Advanced Treatment</span>
+        <span class="badge bg-success fs-5 px-4 py-3 rounded-pill shadow-sm">Best Clinical Outcomes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- YOUR EXISTING CARD SECTION (UNCHANGED) -->
+<div class="container my-5">
+  <div class="row g-4">
+
+    <div class="col-lg-6">
+      <div class="card shadow-sm border-0 h-100 overflow-hidden">
+        <div class="row g-0 h-100">
+          <div class="col-sm-7 p-4">
+            <h4 class="fw-bold">Healthcare</h4>
+            <p class="text-muted">
+              Largest network of the world's finest and brightest medical experts
+              who provide compassionate care using outstanding expertise and
+              advanced technology.
+            </p>
+          </div>
+          <div class="col-sm-5 border-start">
+            <img src="assets/Healthcare(1).png" class="w-100 h-100"
+                 style="object-fit: cover; min-height: 200px;" alt="Healthcare">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card shadow-sm border-0 h-100 overflow-hidden">
+        <div class="row g-0 h-100">
+          <div class="col-sm-7 p-4">
+            <h4 class="fw-bold">Research & Innovation</h4>
+            <p class="text-muted">
+              Supporting medical excellence through continuous research,
+              advanced equipment, and modern healthcare facilities.
+            </p>
+          </div>
+          <div class="col-sm-5 border-start">
+            <img src="assets/Research(1).png" class="w-100 h-100"
+                 style="object-fit: cover; min-height: 200px;" alt="Research and Innovation">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card shadow-sm border-0 h-100 overflow-hidden">
+        <div class="row g-0 h-100">
+          <div class="col-sm-7 p-4">
+            <h4 class="fw-bold">Sri Abhinav Heart Institute</h4>
+            <p class="text-muted">
+              Regarded as one of the best heart hospitals in India, performing
+              a multitude of treatments and procedures in cardiology.
+            </p>
+          </div>
+          <div class="col-sm-5 border-start">
+            <img src="assets/a1.jpg" class="w-100 h-100"
+                 style="object-fit: cover; min-height: 200px;" alt="Heart Institute">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="card shadow-sm border-0 h-100 overflow-hidden">
+        <div class="row g-0 h-100">
+          <div class="col-sm-7 p-4">
+            <h4 class="fw-bold">Sri Abhinav Never Sleeps</h4>
+            <p class="text-muted">
+              Get the most advanced emergency care anywhere in minutes.
+              For free ambulance service dial <b class="text-danger">1066</b>
+            </p>
+          </div>
+          <div class="col-sm-5 border-start">
+            <img src="assets/Ambulence.jpg" class="w-100 h-100"
+                 style="object-fit: cover; min-height: 200px;" alt="Emergency Services">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- SPECIALIZED DOCTORS SECTION -->
+<div class="container my-5">
+
+  <div class="text-center mb-5">
+    <h2 class="fw-bold display-6">Our Specialized Doctors</h2>
+    <p class="text-muted fs-6 mb-0">
+      Expert care across every department with trusted specialists.
+    </p>
+  </div>
+
+  <div class="row g-4">
+
+    <!-- Card 1 -->
+    <div class="col-md-4">
+      <div class="special-card h-100">
+        <div class="icon-circle bg-danger-subtle text-danger">
+          ❤️
+        </div>
+        <h5 class="fw-bold mt-3 mb-1">Cardiologist</h5>
+        <p class="text-muted mb-2">Heart Specialist</p>
+        <p class="small text-secondary mb-0">
+          ECG, BP, heart checkups, angioplasty and cardiac treatment.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="col-md-4">
+      <div class="special-card h-100">
+        <div class="icon-circle bg-primary-subtle text-primary">
+          🧠
+        </div>
+        <h5 class="fw-bold mt-3 mb-1">Neurologist</h5>
+        <p class="text-muted mb-2">Brain & Nerve Specialist</p>
+        <p class="small text-secondary mb-0">
+          Migraine, nerve issues, seizures, brain and spinal disorders.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-4">
+      <div class="special-card h-100">
+        <div class="icon-circle bg-success-subtle text-success">
+          🦴
+        </div>
+        <h5 class="fw-bold mt-3 mb-1">Orthopedic</h5>
+        <p class="text-muted mb-2">Bone Specialist</p>
+        <p class="small text-secondary mb-0">
+          Joint pain, fractures, back pain, spine and physiotherapy.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-4">
+      <div class="special-card h-100">
+        <div class="icon-circle bg-warning-subtle text-warning">
+          🧴
+        </div>
+        <h5 class="fw-bold mt-3 mb-1">Dermatologist</h5>
+        <p class="text-muted mb-2">Skin Specialist</p>
+        <p class="small text-secondary mb-0">
+          Skin allergies, acne, hair fall, rashes and skin treatments.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="col-md-4">
+      <div class="special-card h-100">
+        <div class="icon-circle bg-info-subtle text-info">
+          👶
+        </div>
+        <h5 class="fw-bold mt-3 mb-1">Pediatrician</h5>
+        <p class="text-muted mb-2">Child Specialist</p>
+        <p class="small text-secondary mb-0">
+          Child care, vaccination, fever treatment and nutrition.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="col-md-4">
+      <div class="special-card h-100">
+        <div class="icon-circle bg-secondary-subtle text-secondary">
+          🩺
+        </div>
+        <h5 class="fw-bold mt-3 mb-1">General Physician</h5>
+        <p class="text-muted mb-2">General Health</p>
+        <p class="small text-secondary mb-0">
+          Fever, diabetes, BP, infections and regular checkups.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<!-- FOOTER -->
+<footer class="bg-light border-top py-4 mt-auto">
+  <div class="container d-flex justify-content-between align-items-center flex-wrap">
+    <span class="fw-bold text-dark">
+      Contact : 1860 344 5454
+    </span>
+    <span class="text-muted small">
+      © 2024-2026 Sri Abhinav Hospitals, Inc.
+    </span>
+  </div>
+</footer>

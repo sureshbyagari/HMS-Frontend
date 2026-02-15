@@ -1,0 +1,61 @@
+<div class="container mt-4">
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm border rounded-3 px-4 py-2 mb-4">
+    <div class="container-fluid p-0 d-flex justify-content-between align-items-center">
+      
+      <div class="navbar-brand d-flex flex-column m-0">
+        <span class="fw-bold text-primary mb-0" style="line-height: 1.2;">
+          SRI ABHINAV HOSPITALS
+        </span>
+        <span class="text-muted small fw-normal" style="font-size: 0.75rem;">
+          Hospital Management System
+        </span>
+      </div>
+
+      <div>
+        <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-3 fw-bold" routerLink="/docdash">
+           Dashboard
+        </a>
+      </div>
+
+    </div>
+  </nav>
+    <h1 class="fw-normal display-5 text-dark mb-6">Update Patient</h1>
+
+  <p class="text-muted fs-6">
+    Please fill the form below to update an existing patient in the system.
+  </p>
+
+    <div class="card shadow-sm border-0">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+    
+        <div class="mb-3 form-group">
+          <label for="patientName" class="form-label">name</label>
+          <input type="text" class="form-control" id="patientName" placeholder="Enter patient's name" [(ngModel)]="patient.name" name="name" required>
+        </div>
+
+        <div class="mb-3 form-group">
+          <label for="patientAge" class="form-label">age</label>
+          <input type="number" class="form-control" id="patientAge" placeholder="Enter patient's age" [(ngModel)]="patient.age" name="age" required>
+        </div>
+
+        <div class="mb-3 form-group">
+          <label for="patientBloodGroup" class="form-label">blood group</label>
+          <input type="text" class="form-control" id="patientBlood" placeholder="Enter patient's blood group" [(ngModel)]="patient.blood" name="bloodGroup" required>
+        </div>
+
+        <div class="mb-3 form-group">
+          <label for="patientPrescription" class="form-label">prescription</label>
+          <input type="text" class="form-control" id="Prescription" placeholder="Enter patient's prescription details (e.g., dosage, frequency)" [(ngModel)]="patient.prescription" name = "prescription" required>
+        </div>
+
+
+        <button type="submit" class="btn btn-success">Update Patient</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  </div>

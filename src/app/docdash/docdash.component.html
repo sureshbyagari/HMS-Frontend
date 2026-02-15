@@ -1,0 +1,83 @@
+<div class="container mt-4">
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm border rounded-3 px-4 py-2">
+    <div class="container-fluid p-0">
+      
+      <div class="navbar-brand d-flex flex-column m-0">
+        <span class="fw-bold text-primary mb-0" style="line-height: 1.2;">
+          
+          SRI ABHINAV HOSPITALS
+        </span>
+        <span class="text-muted small fw-normal" style="font-size: 0.75rem;">
+          Hospital Management System
+        </span>
+      </div>
+
+      <div class="ms-auto d-flex align-items-center">
+        <ul class="navbar-nav flex-row gap-2">
+          <li class="nav-item">
+            <a class="nav-link btn btn-light border-0 px-3 fw-medium text-dark" routerLink="/createpatient">
+              Add Patient
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-light border-0 px-3 fw-medium text-dark" routerLink="/viewmedicine">
+              View Medicines
+            </a>
+          </li>
+          
+          <li class="vr mx-3 my-2 opacity-25 d-none d-sm-block"></li>
+
+          <li class="nav-item">
+            <a class="btn btn-outline-danger btn-sm px-4 fw-bold rounded-pill" (click)="logout()">
+              Logout
+            </a>
+          </li>
+
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</div>
+<div class="container mt-4 text-center">
+    <h1 class="fw-normal display-5 text-dark mb-2">Dashboard</h1>
+    
+    <p class="text-muted fs-6">
+        Welcome to Dashboard. Please find the patient list available below!!. Click Add Patient to Add p
+    </p>
+</div>
+  <h5 class="mb-3 fw-semibold text-dark">
+    Current Patients List In Your Queue
+  </h5>
+<div class="tableFixhead">
+<table class="table table-striped">
+    <thead class="table table-header">
+        <tr>
+         
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Blood</th>
+        <th>Urgency</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let patient of patients">
+            <td>{{patient.id}}</td>
+            <td>{{patient.name}}</td>
+            <td>{{patient.age}}</td>
+            <td>{{patient.blood}}</td>
+            <td>{{patient.urgency}}</td>
+           <td>
+  <button class="btn btn-success btn-sm me-2" (click)="updatePatient(patient.id)">Update</button>
+  <button class="btn btn-danger btn-sm" (click)="deletePatient(patient.id)">Delete</button>
+</td>
+        </tr>
+
+        <!-- No Data Message -->
+        <tr *ngIf="patients.length === 0">
+            <td colspan="7" class="text-center text-danger fw-bold">No patients in queue</td>
+        </tr>
+</table>
+</div>

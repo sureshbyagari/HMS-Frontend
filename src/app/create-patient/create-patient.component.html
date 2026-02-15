@@ -1,0 +1,71 @@
+<div class="container mt-4">
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm border rounded-3 px-4 py-2 mb-4">
+    <div class="container-fluid p-0 d-flex justify-content-between align-items-center">
+      
+      <div class="navbar-brand d-flex flex-column m-0">
+        <span class="fw-bold text-primary mb-0" style="line-height: 1.2;">
+          SRI ABHINAV HOSPITALS
+        </span>
+        <span class="text-muted small fw-normal" style="font-size: 0.75rem;">
+          Hospital Management System
+        </span>
+      </div>
+
+      <div>
+        <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-3 fw-bold" routerLink="/docdash">
+           Dashboard
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <h1 class="fw-normal display-5 text-dark mb-6">Add Patient</h1>
+
+  <p class="text-muted fs-6">
+    Please fill the form below to add a new patient to the system.
+  </p>
+
+  <div class="card shadow-sm border-0">
+    <div class="card-body">
+      <form (ngSubmit)="onsubmit()">
+        <div class="mb-3">
+          <label for="patientName" class="form-label">Patient Name</label>
+          <input type="text" class="form-control" id="patientName" placeholder="Enter patient's full name" [(ngModel)]="patient.name" name="name" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="patientAge" class="form-label">Patient Age</label>
+          <input type="number" class="form-control" id="patientAge" placeholder="Enter patient's age" [(ngModel)]="patient.age" name="age" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="patientBlood" class="form-label">Blood Group</label>
+          <input type="text" class="form-control" id="patientBlood" placeholder="Enter patient's blood group" [(ngModel)]="patient.blood" name="blood" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="patientPrescription" class="form-label">Prescription</label>
+          <input type="text" class="form-control" id="patientPrescription" placeholder="Enter patient's prescription" [(ngModel)]="patient.prescription" name="prescription" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="patientDose" class="form-label">Dose</label>
+          <input type="text" class="form-control" id="patientDose" placeholder="Enter patient's dose" [(ngModel)]="patient.dose" name="dose" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="patientUrgency" class="form-label">Urgency</label>
+          <input type="text" class="form-control" id="patientUrgency" placeholder="Enter patient's urgency level" [(ngModel)]="patient.urgency" name="urgency" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="patientFees" class="form-label">Fees</label>
+          <input type="text" class="form-control" id="patientFees" placeholder="Enter patient's fees" [(ngModel)]="patient.fees" name="fees" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Add Patient</button>
+      </form>
+    </div>
+  </div>
+</div>
