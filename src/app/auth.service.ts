@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private baseUrl = "https://hms-backend-1-867p.onrender.com/api/auth/login";
+  private baseUrl = "https://hms-backend-1-867p.onrender.com/api/auth";
   auth: any;
 
   constructor(private http: HttpClient, private router: Router) {}
