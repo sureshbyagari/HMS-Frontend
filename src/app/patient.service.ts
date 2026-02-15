@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PatientService {
-   private Baseurl='http://localhost:8080/api/patient';
+   private Baseurl='https://hms-backend-1-867p.onrender.com/api/patient';
   constructor(private httpClient: HttpClient) { }
  
   getPatientsList():Observable<Patient[]>{
