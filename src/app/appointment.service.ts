@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AppointmentService {
 
-  private baseUrl = 'http://localhost:8080/api/Appointment';
+  private baseUrl = 'https://hms-backend-1-867p.onrender.com/api/Appointment';
 
   constructor(private httpClient: HttpClient) {}
 
