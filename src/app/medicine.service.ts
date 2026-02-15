@@ -11,7 +11,7 @@ export class MedicineService {
 
 
   constructor(private httpClient: HttpClient) { }
-  private baseurl="http://localhost:8080/api/Medicine";
+  private baseurl="https://hms-backend-1-867p.onrender.com/api/Medicine";
 
   getmedicineList():Observable<Medicine[]>{ {
     return this.httpClient.get<Medicine[]>(`${this.baseurl}/allMedicines`);
